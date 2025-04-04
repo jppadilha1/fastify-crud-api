@@ -1,0 +1,26 @@
+POST  http://localhost:3333/treinos
+Content-Type: application/json
+
+{
+    "name": "Agachamento",
+    "desc": "4x10 reps",
+    "pr": 100
+}
+
+###
+
+GET http://localhost:3333/treinos
+
+###
+PUT http://localhost:3333/treinos/87476c03-b451-4ee4-8fbb-46a1c6b49b65
+Content-Type: application/json
+
+{
+    "name": "Supino Inclinado",
+    "desc": "4x10 reps",
+    "pr": 30
+}
+
+###
+
+DELETE http://localhost:3333/treinos/03ce1c15-28ef-45b4-89fb-c2d527a7bc1a
