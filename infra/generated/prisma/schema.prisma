@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Employee {
+  id     Int     @id @default(autoincrement())
+  email  String  @unique
+  name   String?
+  salary Decimal @db.Decimal(10, 2)
+}

@@ -1,5 +1,5 @@
 import { fastify } from "fastify";
-import { DatabaseMemory } from "./database-memory.js";
+import db from "./db-client.js";
 
 const server = fastify();
 
@@ -7,27 +7,30 @@ server.get("/", (req, res) => {
   res.send({ message: "Hello this is my Home" });
 });
 
-const database = new DatabaseMemory();
+server.post("/employees", async (req, reply) => {
+  const { email, name, salary } = req.body;
 
-server.post("/treinos", (req, reply) => {
-  const { name, desc, pr } = req.body;
-
-  database.create({
-    name,
-    desc,
-    pr,
+  const info = await db.create({
+    data: {
+      email,
+      name,
+      salary,
+    },
   });
+  console.log(email, name, salary);
+  await db.disconnectClient();
 
   return reply.status(201).send();
 });
 
-server.get("/treinos", (req, res) => {
-  const treinos = database.list();
+server.get("/employees", async (req, res) => {
+  const treinos = await db.read();
+  await db.disconnectClient();
 
   return treinos;
 });
 
-server.put("/treinos/:id", (req, res) => {
+/*server.put("/treinos/:id", (req, res) => {
   const id = req.params.id;
   const { name, desc, pr } = req.body;
 
@@ -47,7 +50,7 @@ server.delete("/treinos/:id", (req, res) => {
   console.log(req.params.id);
 
   return res.status(200).send("deleted successfully");
-});
+}); */
 
 server.listen({ port: 3333 }, (err, adress) => {
   if (err) {
