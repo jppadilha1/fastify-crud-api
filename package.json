@@ -6,12 +6,19 @@
   "scripts": {
     "start": "node --watch server.js",
     "services:up": "docker compose -f infra/compose.yaml up -d",
-    "services:down": "docker compose -f infra/compose.yaml down"
+    "services:down": "docker compose -f infra/compose.yaml down",
+    "migrate:prisma": "npx prisma migrate dev --name add-employee --schema=infra/prisma/schema.prisma",
+    "generate:prisma": "npx prisma generate --schema=infra/prisma/schema.prisma",
+    "setup:prisma": "npm run migrate:prisma && npm run generate:prisma"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@prisma/client": "^6.5.0",
     "fastify": "^5.2.2"
+  },
+  "devDependencies": {
+    "prisma": "^6.5.0"
   }
 }

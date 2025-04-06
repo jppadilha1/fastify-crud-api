@@ -1,15 +1,15 @@
-POST  http://localhost:3333/treinos
+POST  http://localhost:3333/employees
 Content-Type: application/json
 
 {
-    "name": "Agachamento",
-    "desc": "4x10 reps",
-    "pr": 100
+    "email": "teste1@gmail.com",
+    "name": "Joao Pedro",
+    "salary": 3000
 }
 
 ###
 
-GET http://localhost:3333/treinos
+GET http://localhost:3333/employees
 
 ###
 PUT http://localhost:3333/treinos/87476c03-b451-4ee4-8fbb-46a1c6b49b65
