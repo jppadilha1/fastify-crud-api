@@ -1,61 +1,57 @@
-import {fastify} from 'fastify'
-import { DatabaseMemory } from './database-memory.js'
+import { fastify } from "fastify";
+import { DatabaseMemory } from "./database-memory.js";
 
-const server = fastify()
+const server = fastify();
 
-server.get('/', (req, res) => {
-    res.send({message: 'Imagina só'})
-})
+server.get("/", (req, res) => {
+  res.send({ message: "Hello this is my Home" });
+});
 
+const database = new DatabaseMemory();
 
-const database = new DatabaseMemory()
-// Route parameters... rotas do meu endpoint treinos
+server.post("/treinos", (req, reply) => {
+  const { name, desc, pr } = req.body;
 
-server.post('/treinos', (req, reply) => {
+  database.create({
+    name,
+    desc,
+    pr,
+  });
 
-    const {name, desc, pr} = req.body
+  return reply.status(201).send();
+});
 
-    database.create({
-    // Ta ligado quando id: id, name: name -> se chama short sintax no Js
-        name,
-        desc,
-        pr
-    })
+server.get("/treinos", (req, res) => {
+  const treinos = database.list();
 
-    return reply.status(201).send()
-})
+  return treinos;
+});
 
-server.get('/treinos', (req, res) => {
-    const treinos = database.list()
+server.put("/treinos/:id", (req, res) => {
+  const id = req.params.id;
+  const { name, desc, pr } = req.body;
 
-    return treinos
-})
+  database.update(id, {
+    name,
+    desc,
+    pr,
+  });
 
+  return res
+    .status(204)
+    .send("204, request successful, but not return any content");
+});
 
-server.put('/treinos/:id', (req, res) => {
-    const id = req.params.id
-    const {name, desc, pr} = req.body
+server.delete("/treinos/:id", (req, res) => {
+  database.delete(req.params.id);
+  console.log(req.params.id);
 
-    database.update(id, {
-        name, 
-        desc,
-        pr
-    })
+  return res.status(200).send("deleted successfully");
+});
 
-    return res.status(204).send('204, request successful, but not return any content')
-})
-
-server.delete('/treinos/:id', (req, res) => {
-    database.delete(req.params.id)
-    console.log(req.params.id)
-
-    return res.status(200).send('deleted successfully')
-})
-
-server.listen({ port: 3333}, (err,adress) => {
-    if(err) {
-        console.error(err)
-        process.exit(1)
-    }
-})
-
+server.listen({ port: 3333 }, (err, adress) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+});
