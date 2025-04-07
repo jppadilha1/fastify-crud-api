@@ -2,7 +2,7 @@ POST  http://localhost:3333/employees
 Content-Type: application/json
 
 {
-    "email": "teste1@gmail.com",
+    "email": "teste@gmail.com",
     "name": "Joao Pedro",
     "salary": 3000
 }
@@ -12,13 +12,13 @@ Content-Type: application/json
 GET http://localhost:3333/employees
 
 ###
-PUT http://localhost:3333/treinos/87476c03-b451-4ee4-8fbb-46a1c6b49b65
+PUT http://localhost:3333/employees/1
 Content-Type: application/json
 
 {
-    "name": "Supino Inclinado",
-    "desc": "4x10 reps",
-    "pr": 30
+    "email": "teste2@gmail.com",
+    "name": "Joao Pedro Novo",
+    "salary": 2500
 }
 
 ###

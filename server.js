@@ -1,5 +1,5 @@
 import { fastify } from "fastify";
-import db from "./db-client.js";
+import db from "./infra/db-client.js";
 
 const server = fastify();
 
@@ -10,14 +10,13 @@ server.get("/", (req, res) => {
 server.post("/employees", async (req, reply) => {
   const { email, name, salary } = req.body;
 
-  const info = await db.create({
+  await db.create({
     data: {
       email,
       name,
       salary,
     },
   });
-  console.log(email, name, salary);
   await db.disconnectClient();
 
   return reply.status(201).send();
@@ -30,21 +29,21 @@ server.get("/employees", async (req, res) => {
   return treinos;
 });
 
-/*server.put("/treinos/:id", (req, res) => {
-  const id = req.params.id;
-  const { name, desc, pr } = req.body;
+server.put("/employees/:id", async (req, res) => {
+  const id = parseInt(req.params.id);
+  const { email, name, salary } = req.body;
 
-  database.update(id, {
+  await db.update(id, {
+    email,
     name,
-    desc,
-    pr,
+    salary,
   });
 
   return res
     .status(204)
     .send("204, request successful, but not return any content");
 });
-
+/*
 server.delete("/treinos/:id", (req, res) => {
   database.delete(req.params.id);
   console.log(req.params.id);

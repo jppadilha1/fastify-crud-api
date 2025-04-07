@@ -1,4 +1,4 @@
-import { PrismaClient } from "./infra/generated/prisma/index.js";
+import { PrismaClient } from "./generated/prisma/index.js";
 
 const prisma = new PrismaClient();
 
@@ -10,6 +10,13 @@ async function read() {
   return await prisma.employee.findMany();
 }
 
+async function update(id, data) {
+  await prisma.employee.update({
+    where: { id: id },
+    data: data,
+  });
+}
+
 async function disconnectClient() {
   await prisma.$disconnect();
 }
@@ -17,5 +24,6 @@ async function disconnectClient() {
 export default {
   create,
   read,
+  update,
   disconnectClient,
 };
