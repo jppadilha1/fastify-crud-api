@@ -8,9 +8,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Employee {
+model products {
   id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  salary  Decimal @db.Decimal(10, 2)
+  name   String   @unique
+  desc    String?
+  price  Decimal @db.Decimal(10, 2)
 }

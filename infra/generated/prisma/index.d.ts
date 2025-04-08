@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Employee
+ * Model products
  * 
  */
-export type Employee = $Result.DefaultSelection<Prisma.$EmployeePayload>
+export type products = $Result.DefaultSelection<Prisma.$productsPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -26,8 +26,8 @@ export type Employee = $Result.DefaultSelection<Prisma.$EmployeePayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Employees
- * const employees = await prisma.employee.findMany()
+ * // Fetch zero or more Products
+ * const products = await prisma.products.findMany()
  * ```
  *
  *
@@ -47,8 +47,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Employees
-   * const employees = await prisma.employee.findMany()
+   * // Fetch zero or more Products
+   * const products = await prisma.products.findMany()
    * ```
    *
    *
@@ -145,14 +145,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.employee`: Exposes CRUD operations for the **Employee** model.
+   * `prisma.products`: Exposes CRUD operations for the **products** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Employees
-    * const employees = await prisma.employee.findMany()
+    * // Fetch zero or more Products
+    * const products = await prisma.products.findMany()
     * ```
     */
-  get employee(): Prisma.EmployeeDelegate<ExtArgs, ClientOptions>;
+  get products(): Prisma.productsDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -593,7 +593,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Employee: 'Employee'
+    products: 'products'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -612,81 +612,81 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "employee"
+      modelProps: "products"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Employee: {
-        payload: Prisma.$EmployeePayload<ExtArgs>
-        fields: Prisma.EmployeeFieldRefs
+      products: {
+        payload: Prisma.$productsPayload<ExtArgs>
+        fields: Prisma.productsFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.EmployeeFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload> | null
+            args: Prisma.productsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.EmployeeFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>
+            args: Prisma.productsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>
           }
           findFirst: {
-            args: Prisma.EmployeeFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload> | null
+            args: Prisma.productsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.EmployeeFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>
+            args: Prisma.productsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>
           }
           findMany: {
-            args: Prisma.EmployeeFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>[]
+            args: Prisma.productsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>[]
           }
           create: {
-            args: Prisma.EmployeeCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>
+            args: Prisma.productsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>
           }
           createMany: {
-            args: Prisma.EmployeeCreateManyArgs<ExtArgs>
+            args: Prisma.productsCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.EmployeeCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>[]
+            args: Prisma.productsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>[]
           }
           delete: {
-            args: Prisma.EmployeeDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>
+            args: Prisma.productsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>
           }
           update: {
-            args: Prisma.EmployeeUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>
+            args: Prisma.productsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>
           }
           deleteMany: {
-            args: Prisma.EmployeeDeleteManyArgs<ExtArgs>
+            args: Prisma.productsDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.EmployeeUpdateManyArgs<ExtArgs>
+            args: Prisma.productsUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.EmployeeUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>[]
+            args: Prisma.productsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>[]
           }
           upsert: {
-            args: Prisma.EmployeeUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmployeePayload>
+            args: Prisma.productsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$productsPayload>
           }
           aggregate: {
-            args: Prisma.EmployeeAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateEmployee>
+            args: Prisma.ProductsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProducts>
           }
           groupBy: {
-            args: Prisma.EmployeeGroupByArgs<ExtArgs>
-            result: $Utils.Optional<EmployeeGroupByOutputType>[]
+            args: Prisma.productsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ProductsGroupByOutputType>[]
           }
           count: {
-            args: Prisma.EmployeeCountArgs<ExtArgs>
-            result: $Utils.Optional<EmployeeCountAggregateOutputType> | number
+            args: Prisma.productsCountArgs<ExtArgs>
+            result: $Utils.Optional<ProductsCountAggregateOutputType> | number
           }
         }
       }
@@ -774,7 +774,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    employee?: EmployeeOmit
+    products?: productsOmit
   }
 
   /* Types for Logging */
@@ -870,362 +870,362 @@ export namespace Prisma {
    */
 
   /**
-   * Model Employee
+   * Model products
    */
 
-  export type AggregateEmployee = {
-    _count: EmployeeCountAggregateOutputType | null
-    _avg: EmployeeAvgAggregateOutputType | null
-    _sum: EmployeeSumAggregateOutputType | null
-    _min: EmployeeMinAggregateOutputType | null
-    _max: EmployeeMaxAggregateOutputType | null
+  export type AggregateProducts = {
+    _count: ProductsCountAggregateOutputType | null
+    _avg: ProductsAvgAggregateOutputType | null
+    _sum: ProductsSumAggregateOutputType | null
+    _min: ProductsMinAggregateOutputType | null
+    _max: ProductsMaxAggregateOutputType | null
   }
 
-  export type EmployeeAvgAggregateOutputType = {
+  export type ProductsAvgAggregateOutputType = {
     id: number | null
-    salary: Decimal | null
+    price: Decimal | null
   }
 
-  export type EmployeeSumAggregateOutputType = {
+  export type ProductsSumAggregateOutputType = {
     id: number | null
-    salary: Decimal | null
+    price: Decimal | null
   }
 
-  export type EmployeeMinAggregateOutputType = {
+  export type ProductsMinAggregateOutputType = {
     id: number | null
-    email: string | null
     name: string | null
-    salary: Decimal | null
+    desc: string | null
+    price: Decimal | null
   }
 
-  export type EmployeeMaxAggregateOutputType = {
+  export type ProductsMaxAggregateOutputType = {
     id: number | null
-    email: string | null
     name: string | null
-    salary: Decimal | null
+    desc: string | null
+    price: Decimal | null
   }
 
-  export type EmployeeCountAggregateOutputType = {
+  export type ProductsCountAggregateOutputType = {
     id: number
-    email: number
     name: number
-    salary: number
+    desc: number
+    price: number
     _all: number
   }
 
 
-  export type EmployeeAvgAggregateInputType = {
+  export type ProductsAvgAggregateInputType = {
     id?: true
-    salary?: true
+    price?: true
   }
 
-  export type EmployeeSumAggregateInputType = {
+  export type ProductsSumAggregateInputType = {
     id?: true
-    salary?: true
+    price?: true
   }
 
-  export type EmployeeMinAggregateInputType = {
+  export type ProductsMinAggregateInputType = {
     id?: true
-    email?: true
     name?: true
-    salary?: true
+    desc?: true
+    price?: true
   }
 
-  export type EmployeeMaxAggregateInputType = {
+  export type ProductsMaxAggregateInputType = {
     id?: true
-    email?: true
     name?: true
-    salary?: true
+    desc?: true
+    price?: true
   }
 
-  export type EmployeeCountAggregateInputType = {
+  export type ProductsCountAggregateInputType = {
     id?: true
-    email?: true
     name?: true
-    salary?: true
+    desc?: true
+    price?: true
     _all?: true
   }
 
-  export type EmployeeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProductsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Employee to aggregate.
+     * Filter which products to aggregate.
      */
-    where?: EmployeeWhereInput
+    where?: productsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Employees to fetch.
+     * Determine the order of products to fetch.
      */
-    orderBy?: EmployeeOrderByWithRelationInput | EmployeeOrderByWithRelationInput[]
+    orderBy?: productsOrderByWithRelationInput | productsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: EmployeeWhereUniqueInput
+    cursor?: productsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Employees from the position of the cursor.
+     * Take `±n` products from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Employees.
+     * Skip the first `n` products.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Employees
+     * Count returned products
     **/
-    _count?: true | EmployeeCountAggregateInputType
+    _count?: true | ProductsCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: EmployeeAvgAggregateInputType
+    _avg?: ProductsAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: EmployeeSumAggregateInputType
+    _sum?: ProductsSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: EmployeeMinAggregateInputType
+    _min?: ProductsMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: EmployeeMaxAggregateInputType
+    _max?: ProductsMaxAggregateInputType
   }
 
-  export type GetEmployeeAggregateType<T extends EmployeeAggregateArgs> = {
-        [P in keyof T & keyof AggregateEmployee]: P extends '_count' | 'count'
+  export type GetProductsAggregateType<T extends ProductsAggregateArgs> = {
+        [P in keyof T & keyof AggregateProducts]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateEmployee[P]>
-      : GetScalarType<T[P], AggregateEmployee[P]>
+        : GetScalarType<T[P], AggregateProducts[P]>
+      : GetScalarType<T[P], AggregateProducts[P]>
   }
 
 
 
 
-  export type EmployeeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EmployeeWhereInput
-    orderBy?: EmployeeOrderByWithAggregationInput | EmployeeOrderByWithAggregationInput[]
-    by: EmployeeScalarFieldEnum[] | EmployeeScalarFieldEnum
-    having?: EmployeeScalarWhereWithAggregatesInput
+  export type productsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: productsWhereInput
+    orderBy?: productsOrderByWithAggregationInput | productsOrderByWithAggregationInput[]
+    by: ProductsScalarFieldEnum[] | ProductsScalarFieldEnum
+    having?: productsScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: EmployeeCountAggregateInputType | true
-    _avg?: EmployeeAvgAggregateInputType
-    _sum?: EmployeeSumAggregateInputType
-    _min?: EmployeeMinAggregateInputType
-    _max?: EmployeeMaxAggregateInputType
+    _count?: ProductsCountAggregateInputType | true
+    _avg?: ProductsAvgAggregateInputType
+    _sum?: ProductsSumAggregateInputType
+    _min?: ProductsMinAggregateInputType
+    _max?: ProductsMaxAggregateInputType
   }
 
-  export type EmployeeGroupByOutputType = {
+  export type ProductsGroupByOutputType = {
     id: number
-    email: string
-    name: string | null
-    salary: Decimal
-    _count: EmployeeCountAggregateOutputType | null
-    _avg: EmployeeAvgAggregateOutputType | null
-    _sum: EmployeeSumAggregateOutputType | null
-    _min: EmployeeMinAggregateOutputType | null
-    _max: EmployeeMaxAggregateOutputType | null
+    name: string
+    desc: string | null
+    price: Decimal
+    _count: ProductsCountAggregateOutputType | null
+    _avg: ProductsAvgAggregateOutputType | null
+    _sum: ProductsSumAggregateOutputType | null
+    _min: ProductsMinAggregateOutputType | null
+    _max: ProductsMaxAggregateOutputType | null
   }
 
-  type GetEmployeeGroupByPayload<T extends EmployeeGroupByArgs> = Prisma.PrismaPromise<
+  type GetProductsGroupByPayload<T extends productsGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<EmployeeGroupByOutputType, T['by']> &
+      PickEnumerable<ProductsGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof EmployeeGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof ProductsGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], EmployeeGroupByOutputType[P]>
-            : GetScalarType<T[P], EmployeeGroupByOutputType[P]>
+              : GetScalarType<T[P], ProductsGroupByOutputType[P]>
+            : GetScalarType<T[P], ProductsGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type EmployeeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type productsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
     name?: boolean
-    salary?: boolean
-  }, ExtArgs["result"]["employee"]>
+    desc?: boolean
+    price?: boolean
+  }, ExtArgs["result"]["products"]>
 
-  export type EmployeeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type productsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
     name?: boolean
-    salary?: boolean
-  }, ExtArgs["result"]["employee"]>
+    desc?: boolean
+    price?: boolean
+  }, ExtArgs["result"]["products"]>
 
-  export type EmployeeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type productsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
     name?: boolean
-    salary?: boolean
-  }, ExtArgs["result"]["employee"]>
+    desc?: boolean
+    price?: boolean
+  }, ExtArgs["result"]["products"]>
 
-  export type EmployeeSelectScalar = {
+  export type productsSelectScalar = {
     id?: boolean
-    email?: boolean
     name?: boolean
-    salary?: boolean
+    desc?: boolean
+    price?: boolean
   }
 
-  export type EmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "name" | "salary", ExtArgs["result"]["employee"]>
+  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "desc" | "price", ExtArgs["result"]["products"]>
 
-  export type $EmployeePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Employee"
+  export type $productsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "products"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      email: string
-      name: string | null
-      salary: Prisma.Decimal
-    }, ExtArgs["result"]["employee"]>
+      name: string
+      desc: string | null
+      price: Prisma.Decimal
+    }, ExtArgs["result"]["products"]>
     composites: {}
   }
 
-  type EmployeeGetPayload<S extends boolean | null | undefined | EmployeeDefaultArgs> = $Result.GetResult<Prisma.$EmployeePayload, S>
+  type productsGetPayload<S extends boolean | null | undefined | productsDefaultArgs> = $Result.GetResult<Prisma.$productsPayload, S>
 
-  type EmployeeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<EmployeeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: EmployeeCountAggregateInputType | true
+  type productsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<productsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ProductsCountAggregateInputType | true
     }
 
-  export interface EmployeeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Employee'], meta: { name: 'Employee' } }
+  export interface productsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['products'], meta: { name: 'products' } }
     /**
-     * Find zero or one Employee that matches the filter.
-     * @param {EmployeeFindUniqueArgs} args - Arguments to find a Employee
+     * Find zero or one Products that matches the filter.
+     * @param {productsFindUniqueArgs} args - Arguments to find a Products
      * @example
-     * // Get one Employee
-     * const employee = await prisma.employee.findUnique({
+     * // Get one Products
+     * const products = await prisma.products.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends EmployeeFindUniqueArgs>(args: SelectSubset<T, EmployeeFindUniqueArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends productsFindUniqueArgs>(args: SelectSubset<T, productsFindUniqueArgs<ExtArgs>>): Prisma__productsClient<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Employee that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Products that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {EmployeeFindUniqueOrThrowArgs} args - Arguments to find a Employee
+     * @param {productsFindUniqueOrThrowArgs} args - Arguments to find a Products
      * @example
-     * // Get one Employee
-     * const employee = await prisma.employee.findUniqueOrThrow({
+     * // Get one Products
+     * const products = await prisma.products.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends EmployeeFindUniqueOrThrowArgs>(args: SelectSubset<T, EmployeeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends productsFindUniqueOrThrowArgs>(args: SelectSubset<T, productsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__productsClient<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Employee that matches the filter.
+     * Find the first Products that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmployeeFindFirstArgs} args - Arguments to find a Employee
+     * @param {productsFindFirstArgs} args - Arguments to find a Products
      * @example
-     * // Get one Employee
-     * const employee = await prisma.employee.findFirst({
+     * // Get one Products
+     * const products = await prisma.products.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends EmployeeFindFirstArgs>(args?: SelectSubset<T, EmployeeFindFirstArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends productsFindFirstArgs>(args?: SelectSubset<T, productsFindFirstArgs<ExtArgs>>): Prisma__productsClient<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Employee that matches the filter or
+     * Find the first Products that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmployeeFindFirstOrThrowArgs} args - Arguments to find a Employee
+     * @param {productsFindFirstOrThrowArgs} args - Arguments to find a Products
      * @example
-     * // Get one Employee
-     * const employee = await prisma.employee.findFirstOrThrow({
+     * // Get one Products
+     * const products = await prisma.products.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends EmployeeFindFirstOrThrowArgs>(args?: SelectSubset<T, EmployeeFindFirstOrThrowArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends productsFindFirstOrThrowArgs>(args?: SelectSubset<T, productsFindFirstOrThrowArgs<ExtArgs>>): Prisma__productsClient<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Employees that matches the filter.
+     * Find zero or more Products that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmployeeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {productsFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Employees
-     * const employees = await prisma.employee.findMany()
+     * // Get all Products
+     * const products = await prisma.products.findMany()
      * 
-     * // Get first 10 Employees
-     * const employees = await prisma.employee.findMany({ take: 10 })
+     * // Get first 10 Products
+     * const products = await prisma.products.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const employeeWithIdOnly = await prisma.employee.findMany({ select: { id: true } })
+     * const productsWithIdOnly = await prisma.products.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends EmployeeFindManyArgs>(args?: SelectSubset<T, EmployeeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends productsFindManyArgs>(args?: SelectSubset<T, productsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Employee.
-     * @param {EmployeeCreateArgs} args - Arguments to create a Employee.
+     * Create a Products.
+     * @param {productsCreateArgs} args - Arguments to create a Products.
      * @example
-     * // Create one Employee
-     * const Employee = await prisma.employee.create({
+     * // Create one Products
+     * const Products = await prisma.products.create({
      *   data: {
-     *     // ... data to create a Employee
+     *     // ... data to create a Products
      *   }
      * })
      * 
      */
-    create<T extends EmployeeCreateArgs>(args: SelectSubset<T, EmployeeCreateArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends productsCreateArgs>(args: SelectSubset<T, productsCreateArgs<ExtArgs>>): Prisma__productsClient<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Employees.
-     * @param {EmployeeCreateManyArgs} args - Arguments to create many Employees.
+     * Create many Products.
+     * @param {productsCreateManyArgs} args - Arguments to create many Products.
      * @example
-     * // Create many Employees
-     * const employee = await prisma.employee.createMany({
+     * // Create many Products
+     * const products = await prisma.products.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends EmployeeCreateManyArgs>(args?: SelectSubset<T, EmployeeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends productsCreateManyArgs>(args?: SelectSubset<T, productsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Employees and returns the data saved in the database.
-     * @param {EmployeeCreateManyAndReturnArgs} args - Arguments to create many Employees.
+     * Create many Products and returns the data saved in the database.
+     * @param {productsCreateManyAndReturnArgs} args - Arguments to create many Products.
      * @example
-     * // Create many Employees
-     * const employee = await prisma.employee.createManyAndReturn({
+     * // Create many Products
+     * const products = await prisma.products.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Employees and only return the `id`
-     * const employeeWithIdOnly = await prisma.employee.createManyAndReturn({
+     * // Create many Products and only return the `id`
+     * const productsWithIdOnly = await prisma.products.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -1235,28 +1235,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends EmployeeCreateManyAndReturnArgs>(args?: SelectSubset<T, EmployeeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends productsCreateManyAndReturnArgs>(args?: SelectSubset<T, productsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Employee.
-     * @param {EmployeeDeleteArgs} args - Arguments to delete one Employee.
+     * Delete a Products.
+     * @param {productsDeleteArgs} args - Arguments to delete one Products.
      * @example
-     * // Delete one Employee
-     * const Employee = await prisma.employee.delete({
+     * // Delete one Products
+     * const Products = await prisma.products.delete({
      *   where: {
-     *     // ... filter to delete one Employee
+     *     // ... filter to delete one Products
      *   }
      * })
      * 
      */
-    delete<T extends EmployeeDeleteArgs>(args: SelectSubset<T, EmployeeDeleteArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends productsDeleteArgs>(args: SelectSubset<T, productsDeleteArgs<ExtArgs>>): Prisma__productsClient<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Employee.
-     * @param {EmployeeUpdateArgs} args - Arguments to update one Employee.
+     * Update one Products.
+     * @param {productsUpdateArgs} args - Arguments to update one Products.
      * @example
-     * // Update one Employee
-     * const employee = await prisma.employee.update({
+     * // Update one Products
+     * const products = await prisma.products.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1266,30 +1266,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends EmployeeUpdateArgs>(args: SelectSubset<T, EmployeeUpdateArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends productsUpdateArgs>(args: SelectSubset<T, productsUpdateArgs<ExtArgs>>): Prisma__productsClient<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Employees.
-     * @param {EmployeeDeleteManyArgs} args - Arguments to filter Employees to delete.
+     * Delete zero or more Products.
+     * @param {productsDeleteManyArgs} args - Arguments to filter Products to delete.
      * @example
-     * // Delete a few Employees
-     * const { count } = await prisma.employee.deleteMany({
+     * // Delete a few Products
+     * const { count } = await prisma.products.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends EmployeeDeleteManyArgs>(args?: SelectSubset<T, EmployeeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends productsDeleteManyArgs>(args?: SelectSubset<T, productsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Employees.
+     * Update zero or more Products.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmployeeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {productsUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Employees
-     * const employee = await prisma.employee.updateMany({
+     * // Update many Products
+     * const products = await prisma.products.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1299,14 +1299,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends EmployeeUpdateManyArgs>(args: SelectSubset<T, EmployeeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends productsUpdateManyArgs>(args: SelectSubset<T, productsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Employees and returns the data updated in the database.
-     * @param {EmployeeUpdateManyAndReturnArgs} args - Arguments to update many Employees.
+     * Update zero or more Products and returns the data updated in the database.
+     * @param {productsUpdateManyAndReturnArgs} args - Arguments to update many Products.
      * @example
-     * // Update many Employees
-     * const employee = await prisma.employee.updateManyAndReturn({
+     * // Update many Products
+     * const products = await prisma.products.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1315,8 +1315,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Employees and only return the `id`
-     * const employeeWithIdOnly = await prisma.employee.updateManyAndReturn({
+     * // Update zero or more Products and only return the `id`
+     * const productsWithIdOnly = await prisma.products.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -1329,56 +1329,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends EmployeeUpdateManyAndReturnArgs>(args: SelectSubset<T, EmployeeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends productsUpdateManyAndReturnArgs>(args: SelectSubset<T, productsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Employee.
-     * @param {EmployeeUpsertArgs} args - Arguments to update or create a Employee.
+     * Create or update one Products.
+     * @param {productsUpsertArgs} args - Arguments to update or create a Products.
      * @example
-     * // Update or create a Employee
-     * const employee = await prisma.employee.upsert({
+     * // Update or create a Products
+     * const products = await prisma.products.upsert({
      *   create: {
-     *     // ... data to create a Employee
+     *     // ... data to create a Products
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Employee we want to update
+     *     // ... the filter for the Products we want to update
      *   }
      * })
      */
-    upsert<T extends EmployeeUpsertArgs>(args: SelectSubset<T, EmployeeUpsertArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends productsUpsertArgs>(args: SelectSubset<T, productsUpsertArgs<ExtArgs>>): Prisma__productsClient<$Result.GetResult<Prisma.$productsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Employees.
+     * Count the number of Products.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmployeeCountArgs} args - Arguments to filter Employees to count.
+     * @param {productsCountArgs} args - Arguments to filter Products to count.
      * @example
-     * // Count the number of Employees
-     * const count = await prisma.employee.count({
+     * // Count the number of Products
+     * const count = await prisma.products.count({
      *   where: {
-     *     // ... the filter for the Employees we want to count
+     *     // ... the filter for the Products we want to count
      *   }
      * })
     **/
-    count<T extends EmployeeCountArgs>(
-      args?: Subset<T, EmployeeCountArgs>,
+    count<T extends productsCountArgs>(
+      args?: Subset<T, productsCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], EmployeeCountAggregateOutputType>
+          : GetScalarType<T['select'], ProductsCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Employee.
+     * Allows you to perform aggregations operations on a Products.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmployeeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {ProductsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1398,13 +1398,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends EmployeeAggregateArgs>(args: Subset<T, EmployeeAggregateArgs>): Prisma.PrismaPromise<GetEmployeeAggregateType<T>>
+    aggregate<T extends ProductsAggregateArgs>(args: Subset<T, ProductsAggregateArgs>): Prisma.PrismaPromise<GetProductsAggregateType<T>>
 
     /**
-     * Group by Employee.
+     * Group by Products.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmployeeGroupByArgs} args - Group by arguments.
+     * @param {productsGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1419,14 +1419,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends EmployeeGroupByArgs,
+      T extends productsGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: EmployeeGroupByArgs['orderBy'] }
-        : { orderBy?: EmployeeGroupByArgs['orderBy'] },
+        ? { orderBy: productsGroupByArgs['orderBy'] }
+        : { orderBy?: productsGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1475,20 +1475,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, EmployeeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmployeeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, productsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProductsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Employee model
+   * Fields of the products model
    */
-  readonly fields: EmployeeFieldRefs;
+  readonly fields: productsFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Employee.
+   * The delegate class that acts as a "Promise-like" for products.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__EmployeeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__productsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1516,376 +1516,376 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Employee model
+   * Fields of the products model
    */ 
-  interface EmployeeFieldRefs {
-    readonly id: FieldRef<"Employee", 'Int'>
-    readonly email: FieldRef<"Employee", 'String'>
-    readonly name: FieldRef<"Employee", 'String'>
-    readonly salary: FieldRef<"Employee", 'Decimal'>
+  interface productsFieldRefs {
+    readonly id: FieldRef<"products", 'Int'>
+    readonly name: FieldRef<"products", 'String'>
+    readonly desc: FieldRef<"products", 'String'>
+    readonly price: FieldRef<"products", 'Decimal'>
   }
     
 
   // Custom InputTypes
   /**
-   * Employee findUnique
+   * products findUnique
    */
-  export type EmployeeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * Filter, which Employee to fetch.
+     * Filter, which products to fetch.
      */
-    where: EmployeeWhereUniqueInput
+    where: productsWhereUniqueInput
   }
 
   /**
-   * Employee findUniqueOrThrow
+   * products findUniqueOrThrow
    */
-  export type EmployeeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * Filter, which Employee to fetch.
+     * Filter, which products to fetch.
      */
-    where: EmployeeWhereUniqueInput
+    where: productsWhereUniqueInput
   }
 
   /**
-   * Employee findFirst
+   * products findFirst
    */
-  export type EmployeeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * Filter, which Employee to fetch.
+     * Filter, which products to fetch.
      */
-    where?: EmployeeWhereInput
+    where?: productsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Employees to fetch.
+     * Determine the order of products to fetch.
      */
-    orderBy?: EmployeeOrderByWithRelationInput | EmployeeOrderByWithRelationInput[]
+    orderBy?: productsOrderByWithRelationInput | productsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Employees.
+     * Sets the position for searching for products.
      */
-    cursor?: EmployeeWhereUniqueInput
+    cursor?: productsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Employees from the position of the cursor.
+     * Take `±n` products from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Employees.
+     * Skip the first `n` products.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Employees.
+     * Filter by unique combinations of products.
      */
-    distinct?: EmployeeScalarFieldEnum | EmployeeScalarFieldEnum[]
+    distinct?: ProductsScalarFieldEnum | ProductsScalarFieldEnum[]
   }
 
   /**
-   * Employee findFirstOrThrow
+   * products findFirstOrThrow
    */
-  export type EmployeeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * Filter, which Employee to fetch.
+     * Filter, which products to fetch.
      */
-    where?: EmployeeWhereInput
+    where?: productsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Employees to fetch.
+     * Determine the order of products to fetch.
      */
-    orderBy?: EmployeeOrderByWithRelationInput | EmployeeOrderByWithRelationInput[]
+    orderBy?: productsOrderByWithRelationInput | productsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Employees.
+     * Sets the position for searching for products.
      */
-    cursor?: EmployeeWhereUniqueInput
+    cursor?: productsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Employees from the position of the cursor.
+     * Take `±n` products from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Employees.
+     * Skip the first `n` products.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Employees.
+     * Filter by unique combinations of products.
      */
-    distinct?: EmployeeScalarFieldEnum | EmployeeScalarFieldEnum[]
+    distinct?: ProductsScalarFieldEnum | ProductsScalarFieldEnum[]
   }
 
   /**
-   * Employee findMany
+   * products findMany
    */
-  export type EmployeeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * Filter, which Employees to fetch.
+     * Filter, which products to fetch.
      */
-    where?: EmployeeWhereInput
+    where?: productsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Employees to fetch.
+     * Determine the order of products to fetch.
      */
-    orderBy?: EmployeeOrderByWithRelationInput | EmployeeOrderByWithRelationInput[]
+    orderBy?: productsOrderByWithRelationInput | productsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Employees.
+     * Sets the position for listing products.
      */
-    cursor?: EmployeeWhereUniqueInput
+    cursor?: productsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Employees from the position of the cursor.
+     * Take `±n` products from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Employees.
+     * Skip the first `n` products.
      */
     skip?: number
-    distinct?: EmployeeScalarFieldEnum | EmployeeScalarFieldEnum[]
+    distinct?: ProductsScalarFieldEnum | ProductsScalarFieldEnum[]
   }
 
   /**
-   * Employee create
+   * products create
    */
-  export type EmployeeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * The data needed to create a Employee.
+     * The data needed to create a products.
      */
-    data: XOR<EmployeeCreateInput, EmployeeUncheckedCreateInput>
+    data: XOR<productsCreateInput, productsUncheckedCreateInput>
   }
 
   /**
-   * Employee createMany
+   * products createMany
    */
-  export type EmployeeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Employees.
+     * The data used to create many products.
      */
-    data: EmployeeCreateManyInput | EmployeeCreateManyInput[]
+    data: productsCreateManyInput | productsCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Employee createManyAndReturn
+   * products createManyAndReturn
    */
-  export type EmployeeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelectCreateManyAndReturn<ExtArgs> | null
+    select?: productsSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * The data used to create many Employees.
+     * The data used to create many products.
      */
-    data: EmployeeCreateManyInput | EmployeeCreateManyInput[]
+    data: productsCreateManyInput | productsCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Employee update
+   * products update
    */
-  export type EmployeeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * The data needed to update a Employee.
+     * The data needed to update a products.
      */
-    data: XOR<EmployeeUpdateInput, EmployeeUncheckedUpdateInput>
+    data: XOR<productsUpdateInput, productsUncheckedUpdateInput>
     /**
-     * Choose, which Employee to update.
+     * Choose, which products to update.
      */
-    where: EmployeeWhereUniqueInput
+    where: productsWhereUniqueInput
   }
 
   /**
-   * Employee updateMany
+   * products updateMany
    */
-  export type EmployeeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Employees.
+     * The data used to update products.
      */
-    data: XOR<EmployeeUpdateManyMutationInput, EmployeeUncheckedUpdateManyInput>
+    data: XOR<productsUpdateManyMutationInput, productsUncheckedUpdateManyInput>
     /**
-     * Filter which Employees to update
+     * Filter which products to update
      */
-    where?: EmployeeWhereInput
+    where?: productsWhereInput
     /**
-     * Limit how many Employees to update.
+     * Limit how many products to update.
      */
     limit?: number
   }
 
   /**
-   * Employee updateManyAndReturn
+   * products updateManyAndReturn
    */
-  export type EmployeeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: productsSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * The data used to update Employees.
+     * The data used to update products.
      */
-    data: XOR<EmployeeUpdateManyMutationInput, EmployeeUncheckedUpdateManyInput>
+    data: XOR<productsUpdateManyMutationInput, productsUncheckedUpdateManyInput>
     /**
-     * Filter which Employees to update
+     * Filter which products to update
      */
-    where?: EmployeeWhereInput
+    where?: productsWhereInput
     /**
-     * Limit how many Employees to update.
+     * Limit how many products to update.
      */
     limit?: number
   }
 
   /**
-   * Employee upsert
+   * products upsert
    */
-  export type EmployeeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * The filter to search for the Employee to update in case it exists.
+     * The filter to search for the products to update in case it exists.
      */
-    where: EmployeeWhereUniqueInput
+    where: productsWhereUniqueInput
     /**
-     * In case the Employee found by the `where` argument doesn't exist, create a new Employee with this data.
+     * In case the products found by the `where` argument doesn't exist, create a new products with this data.
      */
-    create: XOR<EmployeeCreateInput, EmployeeUncheckedCreateInput>
+    create: XOR<productsCreateInput, productsUncheckedCreateInput>
     /**
-     * In case the Employee was found with the provided `where` argument, update it with this data.
+     * In case the products was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<EmployeeUpdateInput, EmployeeUncheckedUpdateInput>
+    update: XOR<productsUpdateInput, productsUncheckedUpdateInput>
   }
 
   /**
-   * Employee delete
+   * products delete
    */
-  export type EmployeeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
     /**
-     * Filter which Employee to delete.
+     * Filter which products to delete.
      */
-    where: EmployeeWhereUniqueInput
+    where: productsWhereUniqueInput
   }
 
   /**
-   * Employee deleteMany
+   * products deleteMany
    */
-  export type EmployeeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Employees to delete
+     * Filter which products to delete
      */
-    where?: EmployeeWhereInput
+    where?: productsWhereInput
     /**
-     * Limit how many Employees to delete.
+     * Limit how many products to delete.
      */
     limit?: number
   }
 
   /**
-   * Employee without action
+   * products without action
    */
-  export type EmployeeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type productsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Employee
+     * Select specific fields to fetch from the products
      */
-    select?: EmployeeSelect<ExtArgs> | null
+    select?: productsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Employee
+     * Omit specific fields from the products
      */
-    omit?: EmployeeOmit<ExtArgs> | null
+    omit?: productsOmit<ExtArgs> | null
   }
 
 
@@ -1903,14 +1903,14 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const EmployeeScalarFieldEnum: {
+  export const ProductsScalarFieldEnum: {
     id: 'id',
-    email: 'email',
     name: 'name',
-    salary: 'salary'
+    desc: 'desc',
+    price: 'price'
   };
 
-  export type EmployeeScalarFieldEnum = (typeof EmployeeScalarFieldEnum)[keyof typeof EmployeeScalarFieldEnum]
+  export type ProductsScalarFieldEnum = (typeof ProductsScalarFieldEnum)[keyof typeof ProductsScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -2001,99 +2001,99 @@ export namespace Prisma {
    */
 
 
-  export type EmployeeWhereInput = {
-    AND?: EmployeeWhereInput | EmployeeWhereInput[]
-    OR?: EmployeeWhereInput[]
-    NOT?: EmployeeWhereInput | EmployeeWhereInput[]
-    id?: IntFilter<"Employee"> | number
-    email?: StringFilter<"Employee"> | string
-    name?: StringNullableFilter<"Employee"> | string | null
-    salary?: DecimalFilter<"Employee"> | Decimal | DecimalJsLike | number | string
+  export type productsWhereInput = {
+    AND?: productsWhereInput | productsWhereInput[]
+    OR?: productsWhereInput[]
+    NOT?: productsWhereInput | productsWhereInput[]
+    id?: IntFilter<"products"> | number
+    name?: StringFilter<"products"> | string
+    desc?: StringNullableFilter<"products"> | string | null
+    price?: DecimalFilter<"products"> | Decimal | DecimalJsLike | number | string
   }
 
-  export type EmployeeOrderByWithRelationInput = {
+  export type productsOrderByWithRelationInput = {
     id?: SortOrder
-    email?: SortOrder
-    name?: SortOrderInput | SortOrder
-    salary?: SortOrder
+    name?: SortOrder
+    desc?: SortOrderInput | SortOrder
+    price?: SortOrder
   }
 
-  export type EmployeeWhereUniqueInput = Prisma.AtLeast<{
+  export type productsWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    email?: string
-    AND?: EmployeeWhereInput | EmployeeWhereInput[]
-    OR?: EmployeeWhereInput[]
-    NOT?: EmployeeWhereInput | EmployeeWhereInput[]
-    name?: StringNullableFilter<"Employee"> | string | null
-    salary?: DecimalFilter<"Employee"> | Decimal | DecimalJsLike | number | string
-  }, "id" | "email">
+    name?: string
+    AND?: productsWhereInput | productsWhereInput[]
+    OR?: productsWhereInput[]
+    NOT?: productsWhereInput | productsWhereInput[]
+    desc?: StringNullableFilter<"products"> | string | null
+    price?: DecimalFilter<"products"> | Decimal | DecimalJsLike | number | string
+  }, "id" | "name">
 
-  export type EmployeeOrderByWithAggregationInput = {
+  export type productsOrderByWithAggregationInput = {
     id?: SortOrder
-    email?: SortOrder
-    name?: SortOrderInput | SortOrder
-    salary?: SortOrder
-    _count?: EmployeeCountOrderByAggregateInput
-    _avg?: EmployeeAvgOrderByAggregateInput
-    _max?: EmployeeMaxOrderByAggregateInput
-    _min?: EmployeeMinOrderByAggregateInput
-    _sum?: EmployeeSumOrderByAggregateInput
+    name?: SortOrder
+    desc?: SortOrderInput | SortOrder
+    price?: SortOrder
+    _count?: productsCountOrderByAggregateInput
+    _avg?: productsAvgOrderByAggregateInput
+    _max?: productsMaxOrderByAggregateInput
+    _min?: productsMinOrderByAggregateInput
+    _sum?: productsSumOrderByAggregateInput
   }
 
-  export type EmployeeScalarWhereWithAggregatesInput = {
-    AND?: EmployeeScalarWhereWithAggregatesInput | EmployeeScalarWhereWithAggregatesInput[]
-    OR?: EmployeeScalarWhereWithAggregatesInput[]
-    NOT?: EmployeeScalarWhereWithAggregatesInput | EmployeeScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Employee"> | number
-    email?: StringWithAggregatesFilter<"Employee"> | string
-    name?: StringNullableWithAggregatesFilter<"Employee"> | string | null
-    salary?: DecimalWithAggregatesFilter<"Employee"> | Decimal | DecimalJsLike | number | string
+  export type productsScalarWhereWithAggregatesInput = {
+    AND?: productsScalarWhereWithAggregatesInput | productsScalarWhereWithAggregatesInput[]
+    OR?: productsScalarWhereWithAggregatesInput[]
+    NOT?: productsScalarWhereWithAggregatesInput | productsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"products"> | number
+    name?: StringWithAggregatesFilter<"products"> | string
+    desc?: StringNullableWithAggregatesFilter<"products"> | string | null
+    price?: DecimalWithAggregatesFilter<"products"> | Decimal | DecimalJsLike | number | string
   }
 
-  export type EmployeeCreateInput = {
-    email: string
-    name?: string | null
-    salary: Decimal | DecimalJsLike | number | string
+  export type productsCreateInput = {
+    name: string
+    desc?: string | null
+    price: Decimal | DecimalJsLike | number | string
   }
 
-  export type EmployeeUncheckedCreateInput = {
+  export type productsUncheckedCreateInput = {
     id?: number
-    email: string
-    name?: string | null
-    salary: Decimal | DecimalJsLike | number | string
+    name: string
+    desc?: string | null
+    price: Decimal | DecimalJsLike | number | string
   }
 
-  export type EmployeeUpdateInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    salary?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+  export type productsUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    desc?: NullableStringFieldUpdateOperationsInput | string | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
   }
 
-  export type EmployeeUncheckedUpdateInput = {
+  export type productsUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    salary?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    name?: StringFieldUpdateOperationsInput | string
+    desc?: NullableStringFieldUpdateOperationsInput | string | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
   }
 
-  export type EmployeeCreateManyInput = {
+  export type productsCreateManyInput = {
     id?: number
-    email: string
-    name?: string | null
-    salary: Decimal | DecimalJsLike | number | string
+    name: string
+    desc?: string | null
+    price: Decimal | DecimalJsLike | number | string
   }
 
-  export type EmployeeUpdateManyMutationInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    salary?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+  export type productsUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    desc?: NullableStringFieldUpdateOperationsInput | string | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
   }
 
-  export type EmployeeUncheckedUpdateManyInput = {
+  export type productsUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    salary?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    name?: StringFieldUpdateOperationsInput | string
+    desc?: NullableStringFieldUpdateOperationsInput | string | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -2153,35 +2153,35 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type EmployeeCountOrderByAggregateInput = {
+  export type productsCountOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
     name?: SortOrder
-    salary?: SortOrder
+    desc?: SortOrder
+    price?: SortOrder
   }
 
-  export type EmployeeAvgOrderByAggregateInput = {
+  export type productsAvgOrderByAggregateInput = {
     id?: SortOrder
-    salary?: SortOrder
+    price?: SortOrder
   }
 
-  export type EmployeeMaxOrderByAggregateInput = {
+  export type productsMaxOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
     name?: SortOrder
-    salary?: SortOrder
+    desc?: SortOrder
+    price?: SortOrder
   }
 
-  export type EmployeeMinOrderByAggregateInput = {
+  export type productsMinOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
     name?: SortOrder
-    salary?: SortOrder
+    desc?: SortOrder
+    price?: SortOrder
   }
 
-  export type EmployeeSumOrderByAggregateInput = {
+  export type productsSumOrderByAggregateInput = {
     id?: SortOrder
-    salary?: SortOrder
+    price?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {

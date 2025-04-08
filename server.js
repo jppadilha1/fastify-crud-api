@@ -7,14 +7,14 @@ server.get("/", (req, res) => {
   res.send({ message: "Hello this is my Home" });
 });
 
-server.post("/employees", async (req, reply) => {
-  const { email, name, salary } = req.body;
+server.post("/products", async (req, reply) => {
+  const { name, desc, price } = req.body;
 
   await db.create({
     data: {
-      email,
       name,
-      salary,
+      desc,
+      price,
     },
   });
   await db.disconnectClient();
@@ -22,34 +22,34 @@ server.post("/employees", async (req, reply) => {
   return reply.status(201).send();
 });
 
-server.get("/employees", async (req, res) => {
-  const treinos = await db.read();
+server.get("/products", async (req, reply) => {
+  const products = await db.read();
   await db.disconnectClient();
 
-  return treinos;
+  return reply.status(200).send(products);
 });
 
-server.put("/employees/:id", async (req, res) => {
+server.put("/products/:id", async (req, reply) => {
   const id = parseInt(req.params.id);
-  const { email, name, salary } = req.body;
+  const { name, desc, price } = req.body;
 
   await db.update(id, {
-    email,
     name,
-    salary,
+    desc,
+    price,
   });
 
-  return res
-    .status(204)
-    .send("204, request successful, but not return any content");
+  await db.disconnectClient();
+  return reply.status(204).send("request successful return any content");
 });
-/*
-server.delete("/treinos/:id", (req, res) => {
-  database.delete(req.params.id);
-  console.log(req.params.id);
 
-  return res.status(200).send("deleted successfully");
-}); */
+server.delete("/products/:id", async (req, reply) => {
+  const id = parseInt(req.params.id);
+  await db.deleteProduct(id);
+
+  await db.disconnectClient();
+  return reply.status(200).send("deleted successfully");
+});
 
 server.listen({ port: 3333 }, (err, adress) => {
   if (err) {

@@ -7,7 +7,7 @@
     "start": "node --watch server.js",
     "services:up": "docker compose -f infra/compose.yaml up -d",
     "services:down": "docker compose -f infra/compose.yaml down",
-    "migrate:prisma": "npx prisma migrate dev --name add-employee --schema=infra/prisma/schema.prisma",
+    "migrate:prisma": "npx prisma migrate dev --name add-products --schema=infra/prisma/schema.prisma",
     "generate:prisma": "npx prisma generate --schema=infra/prisma/schema.prisma",
     "setup:prisma": "npm run migrate:prisma && npm run generate:prisma"
   },

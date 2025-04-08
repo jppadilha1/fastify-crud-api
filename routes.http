@@ -1,26 +1,26 @@
-POST  http://localhost:3333/employees
+POST  http://localhost:3333/products
 Content-Type: application/json
 
 {
-    "email": "teste@gmail.com",
-    "name": "Joao Pedro",
-    "salary": 3000
+    "name": "P2",
+    "desc": "Produto bem legal",
+    "price": 20.99
 }
 
 ###
 
-GET http://localhost:3333/employees
+GET http://localhost:3333/products
 
 ###
-PUT http://localhost:3333/employees/1
+PUT http://localhost:3333/products/1
 Content-Type: application/json
 
 {
-    "email": "teste2@gmail.com",
-    "name": "Joao Pedro Novo",
-    "salary": 2500
+    "name": "P1",
+    "desc": "Produto legal",
+    "price": 12.99
 }
 
 ###
 
-DELETE http://localhost:3333/treinos/03ce1c15-28ef-45b4-89fb-c2d527a7bc1a
+DELETE http://localhost:3333/products/5
