@@ -20,3 +20,6 @@ This is a simple CRUD application for managing products. It supports the four ba
    Run the following command in the project directory:
    ```bash
    npm run start
+Your local server will be running at `http://localhost:3333`
+
+Tip: Install "REST Client" extension in VSCODE and use `routes.http` file to test the endpoints easily.
