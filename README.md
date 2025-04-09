@@ -9,6 +9,18 @@ This is a simple CRUD application for managing products. It supports the four ba
 - **Update**: Modify an existing product.  
 - **Delete**: Remove a product from the database.
 
+## Environment Variables
+
+Before running the project, create a `.env` file in the root directory with the following content:
+
+```env
+POSTGRES_LOCALHOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_USER=local_user
+POSTGRES_DB=local_db
+POSTGRES_PASSWORD=local_password
+DATABASE_URL="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_LOCALHOST}:${POSTGRES_PORT}/${POSTGRES_DB}?schema=public"
+```
 ## Getting Started
 
 1. **Fork the repository** and clone it to your local machine.  
