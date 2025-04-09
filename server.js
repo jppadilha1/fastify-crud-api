@@ -4,7 +4,7 @@ import db from "./infra/db-client.js";
 const server = fastify();
 
 server.get("/", (req, res) => {
-  res.send({ message: "Hello this is my Home" });
+  res.status(200).send({ message: "Hello this is my Home" });
 });
 
 server.post("/products", async (req, reply) => {
@@ -17,14 +17,13 @@ server.post("/products", async (req, reply) => {
       price,
     },
   });
-  await db.disconnectClient();
 
-  return reply.status(201).send();
+  return reply.status(201).send("Created");
 });
 
 server.get("/products", async (req, reply) => {
-  const products = await db.read();
-  await db.disconnectClient();
+  const id = parseInt(req.query.id);
+  const products = await db.read(id);
 
   return reply.status(200).send(products);
 });
@@ -39,7 +38,6 @@ server.put("/products/:id", async (req, reply) => {
     price,
   });
 
-  await db.disconnectClient();
   return reply.status(204).send("request successful return any content");
 });
 
@@ -47,7 +45,6 @@ server.delete("/products/:id", async (req, reply) => {
   const id = parseInt(req.params.id);
   await db.deleteProduct(id);
 
-  await db.disconnectClient();
   return reply.status(200).send("deleted successfully");
 });
 
